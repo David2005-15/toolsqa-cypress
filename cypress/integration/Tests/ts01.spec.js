@@ -21,13 +21,16 @@ describe('TestSuit01', function () {
 
     it.only('Test Case 01',function (){
         MainPage().do().clickOn(MainPageSelectors().selector.TextBox)
-        CommonAssertions().must('#submit').beVisible()
-        TextBoxPage().do().fillInField(TextBoxPageSelectors.selector.FullName, "Full Name")
-        TextBoxPage().do().fillInField(TextBoxPageSelectors.selector.Email, "test@email.com")
-        TextBoxPage().do().fillInField(TextBoxPageSelectors.selector.CurrentAddress, "My Address")
-        TextBoxPage().do().fillInField(TextBoxPageSelectors.selector.PermanentAddress, "Permanent Address")
-        TextBoxPage().do().clickOnButton(TextBoxPageSelectors.selector.Submit)
-        TextBoxPage().assert().must().beVisible("#name")
+        // TextBoxPage().must('#submit').beVisible()
+        TextBoxPage().assert().must('#submit').beVisible()
+        // TextBoxPage().fillInField(TextBoxPageSelectors.selector.FullName, "Full Name")
+        // TextBoxPage().do().fillInField(TextBoxPageSelectors.selector.Email, "test@email.com")
+        // TextBoxPage().do().fillInField(TextBoxPageSelectors.selector.CurrentAddress, "My Address")
+        // TextBoxPage().do().fillInField(TextBoxPageSelectors.selector.PermanentAddress, "Permanent Address")
+        // TextBoxPage().do().clickOnButton(TextBoxPageSelectors.selector.Submit)
+        // TextBoxPage().assert().must().beVisible("#name")
+        TextBoxPage().specy().fillFullName(TextBoxPageSelectors.selector.FullName, "Full Name")
+        TextBoxPage().specy().fillEmail(TextBoxPageSelectors.selector.Email, "mail@main.com")
         // CommonActions().clickOnButton(TextBoxPageSelectors.selector.Submit)
 
         // CommonAssertions().must('#name').beVisible()
