@@ -11,6 +11,9 @@ export const CommonActions = () => {
         fillInField: (selector, text) => {
             cy.get(selector)
                 .type(text)
+        },
+        doubleClick: (selector) => {
+            cy.get(selector).dblclick()
         }
     }
 }
