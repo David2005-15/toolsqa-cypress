@@ -26,10 +26,11 @@ describe('TestSuit01', function () {
         TextBoxPage().do().fillInField(TextBoxPageSelectors.selector.Email, "test@email.com")
         TextBoxPage().do().fillInField(TextBoxPageSelectors.selector.CurrentAddress, "My Address")
         TextBoxPage().do().fillInField(TextBoxPageSelectors.selector.PermanentAddress, "Permanent Address")
+        TextBoxPage().do().clickOnButton(TextBoxPageSelectors.selector.Submit)
+        TextBoxPage().assert().must().beVisible("#name")
+        // CommonActions().clickOnButton(TextBoxPageSelectors.selector.Submit)
 
-        CommonActions().clickOnButton(TextBoxPageSelectors.selector.Submit)
-
-        CommonAssertions().must('#name').beVisible()
+        // CommonAssertions().must('#name').beVisible()
     });
 
     it('Test Case 02', function (){

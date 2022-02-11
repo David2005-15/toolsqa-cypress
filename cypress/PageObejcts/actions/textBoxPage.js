@@ -8,7 +8,7 @@ export const TextBoxPage = () => {
         },
 
         assert: () => {
-            return CommonAssertions
+            return CommonAssertions()
         }
     }
 }
