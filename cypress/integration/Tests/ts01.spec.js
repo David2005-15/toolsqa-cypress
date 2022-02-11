@@ -32,8 +32,8 @@ describe('TestSuit01', function () {
     it('Test Case 02', function (){
         MainPage().do().clickOn(MainPageSelectors().selector.CheckBox)
         CommonAssertions().must('.rct-title').beVisible()
-        CheckBoxPage().do().check(CheckBoxPageSelectors().selector.CheckBox)
-
+        CheckBoxPage().do().clickOn(CheckBoxPageSelectors().selector.CheckBox)
+        CheckBoxPage().do().clickOn(CheckBoxPageSelectors().selector.PlusButton)
         CommonAssertions().must('#result').beVisible()
     });
 
