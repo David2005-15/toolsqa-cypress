@@ -8,6 +8,9 @@ import { CheckBoxPage } from "../../PageObejcts/checkBoxPage";
 import { CheckBoxPageSelectors } from "../../PageObejcts/selectors/checkBoxPageSelectors";
 import { RadioButtonPage } from "../../PageObejcts/radioButtonPage";
 import { RadioButtonSelectors } from "../../PageObejcts/selectors/radioButtonSelectors";
+import { WebTablesPage } from "../../PageObejcts/webTablesPage";
+import { WebTablesPageSelectors } from "../../PageObejcts/selectors/webTablesPageSelectors";
+
 
 
 describe('TestSuit01', function () {
@@ -41,5 +44,11 @@ describe('TestSuit01', function () {
         MainPage().do().clickOn(MainPageSelectors().selector.RadioButton)
         RadioButtonPage().do().clickOn(RadioButtonSelectors().selector.RadioButton)
         CommonAssertions().must('.mt-3').beVisible()
+    });
+
+    it.only('Test Case 04', function () {
+        MainPage().do().clickOn(MainPageSelectors().selector.WebTables)
+        WebTablesPage().do().clickOn(WebTablesPageSelectors().selector.DeleteButton)
+        CommonAssertions().must('.rt-tbody > :nth-child(1) > .rt-tr > :nth-child(1)').haveText()
     });
 });

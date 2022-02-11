@@ -5,6 +5,10 @@ export const CommonAssertions = () => {
                 beVisible: () => {
                     return cy.get(argH).should('be.visible')
                 },
+
+                haveText: () => {
+                    return cy.get(argH).should('have.text', 'Alden')
+                }
             }
         }
     }
