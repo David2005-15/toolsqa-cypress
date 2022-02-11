@@ -1,14 +1,14 @@
-import { MainPage } from "../../PageObejcts/mainPage";
+import { MainPage } from "../../PageObejcts/actions/mainPage";
 import { CommonAssertions } from "../../PageObejcts/commonUsefulCommands/assertions";
 import { CommonActions } from "../../PageObejcts/commonUsefulCommands/commands";
-import { TextBoxPage } from "../../PageObejcts/textBoxPage";
+import { TextBoxPage } from "../../PageObejcts/actions/textBoxPage";
 import { MainPageSelectors } from "../../PageObejcts/selectors/mainPageSelectors";
 import { TextBoxPageSelectors } from "../../PageObejcts/selectors/textBoxPageSelectors";
-import { CheckBoxPage } from "../../PageObejcts/checkBoxPage";
+import { CheckBoxPage } from "../../PageObejcts/actions/checkBoxPage";
 import { CheckBoxPageSelectors } from "../../PageObejcts/selectors/checkBoxPageSelectors";
-import { RadioButtonPage } from "../../PageObejcts/radioButtonPage";
+import { RadioButtonPage } from "../../PageObejcts/actions/radioButtonPage";
 import { RadioButtonSelectors } from "../../PageObejcts/selectors/radioButtonSelectors";
-import { WebTablesPage } from "../../PageObejcts/webTablesPage";
+import { WebTablesPage } from "../../PageObejcts/actions/webTablesPage";
 import { WebTablesPageSelectors } from "../../PageObejcts/selectors/webTablesPageSelectors";
 
 
@@ -19,15 +19,15 @@ describe('TestSuit01', function () {
         CommonActions().clickOnButton(".category-cards > :nth-child(1)")
     });
 
-    it('Test Case 01',function (){
+    it.only('Test Case 01',function (){
         MainPage().do().clickOn(MainPageSelectors().selector.TextBox)
         CommonAssertions().must('#submit').beVisible()
-        TextBoxPage().do().typeIn(TextBoxPageSelectors().selector.FullName, "Full Name")
-        TextBoxPage().do().typeIn(TextBoxPageSelectors().selector.Email, "test@test.com")
-        TextBoxPage().do().typeIn(TextBoxPageSelectors().selector.CurrentAddress, "My Address")
-        TextBoxPage().do().typeIn(TextBoxPageSelectors().selector.PermanentAddress, "Permanent Address")
+        TextBoxPage().do().fillInField(TextBoxPageSelectors.selector.FullName, "Full Name")
+        TextBoxPage().do().fillInField(TextBoxPageSelectors.selector.Email, "test@email.com")
+        TextBoxPage().do().fillInField(TextBoxPageSelectors.selector.CurrentAddress, "My Address")
+        TextBoxPage().do().fillInField(TextBoxPageSelectors.selector.PermanentAddress, "Permanent Address")
 
-        CommonActions().clickOnButton(TextBoxPageSelectors().selector.Submit)
+        CommonActions().clickOnButton(TextBoxPageSelectors.selector.Submit)
 
         CommonAssertions().must('#name').beVisible()
     });
