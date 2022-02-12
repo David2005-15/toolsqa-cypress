@@ -1,6 +1,6 @@
 import { CommonAssertions } from "../commonUsefulCommands/assertions";
 import { CommonActions } from "../commonUsefulCommands/commands";
-import {TextBoxPageSelectors} from "../selectors/textBoxPageSelectors";
+import { TextBoxPageSelectors } from "../selectors/textBoxPageSelectors";
 
 
 export const TextBoxPage = () => {
