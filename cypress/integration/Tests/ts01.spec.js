@@ -26,9 +26,7 @@ describe('TestSuit01', function () {
         TextBoxPage().do().typeIn(TextBoxPageSelectors().selector.Email, "test@test.com")
         TextBoxPage().do().typeIn(TextBoxPageSelectors().selector.CurrentAddress, "My Address")
         TextBoxPage().do().typeIn(TextBoxPageSelectors().selector.PermanentAddress, "Permanent Address")
-
         CommonActions().clickOnButton(TextBoxPageSelectors().selector.Submit)
-
         CommonAssertions().must('#name').beVisible()
     });
 
