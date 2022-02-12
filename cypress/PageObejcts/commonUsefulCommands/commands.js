@@ -1,6 +1,6 @@
 export const CommonActions = () => {
     return {
-        clickOnButton: (selector) => {
+        clickOn: (selector) => {
             cy.get(selector)
                 .click()
         },

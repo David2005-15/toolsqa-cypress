@@ -16,18 +16,21 @@ import { WebTablesPageSelectors } from "../../PageObejcts/selectors/webTablesPag
 describe('TestSuit01', function () {
     beforeEach(function (){
         cy.visit("https://demoqa.com/")
-        CommonActions().clickOnButton(".category-cards > :nth-child(1)")
+        CommonActions().clickOn(".category-cards > :nth-child(1)")
     });
 
     it('Test Case 01',function (){
+        const user = TextBoxPageSelectors.selector
         MainPage().do().clickOn(MainPageSelectors().selector.TextBox)
-        TextBoxPage().assert().must('#submit').beVisible()
-        TextBoxPage().specy().fillFullName(TextBoxPageSelectors.selector.FullName, "Full Name")
-        TextBoxPage().specy().fillEmail(TextBoxPageSelectors.selector.Email, "mail@main.com")
-        TextBoxPage().specy().fillAddress(TextBoxPageSelectors.selector.CurrentAddress, "My Address")
-        TextBoxPage().specy().fillPermanentAddress(TextBoxPageSelectors.selector.PermanentAddress, "My Permanent Address")
-        TextBoxPage().do().clickOnButton(TextBoxPageSelectors.selector.Submit)
-        TextBoxPage().assert().must('#name').beVisible()
+        TextBoxPage().assert().must(user.Submit).beVisible()
+        // TextBoxPage().specy().fillFullName(TextBoxPageSelectors.selector.FullName, "Full Name")
+        // TextBoxPage().specy().fillEmail(TextBoxPageSelectors.selector.Email, "mail@main.com")
+        // TextBoxPage().specy().fillAddress(TextBoxPageSelectors.selector.CurrentAddress, "My Address")
+        // TextBoxPage().specy().fillPermanentAddress(TextBoxPageSelectors.selector.PermanentAddress, "My Permanent Address")
+        // TextBoxPage().do().clickOnButton(TextBoxPageSelectors.selector.Submit)
+        TextBoxPage().specy().fillForm(user.Form, 'John', 'john@gmail.com','Street 2', '2/78')
+        TextBoxPage().do().clickOn(user.Submit)
+        // TextBoxPage().assert().must('#name').beVisible()
     });
 
     it('Test Case 02', function (){
