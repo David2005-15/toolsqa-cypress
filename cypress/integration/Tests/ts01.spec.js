@@ -1,5 +1,4 @@
 import { MainPage } from "../../PageObejcts/actions/mainPage";
-import { CommonAssertions } from "../../PageObejcts/commonUsefulCommands/assertions";
 import { CommonActions } from "../../PageObejcts/commonUsefulCommands/commands";
 import { TextBoxPage } from "../../PageObejcts/actions/textBoxPage";
 import { MainPageSelectors } from "../../PageObejcts/selectors/mainPageSelectors";
@@ -38,13 +37,16 @@ describe('TestSuit01', function () {
 
     it('Test Case 03', function () {
         MainPage().do().clickOn(MainPageSelectors().selector.RadioButton)
-        RadioButtonPage().do().clickOn(RadioButtonSelectors().selector.RadioButton)
-        CommonAssertions().must('.mt-3').beVisible()
+        RadioButtonPage().specy().check(RadioButtonSelectors().selector.RadioButton)
+        RadioButtonPage().assert().must('.mt-3').beVisible()
     });
 
     it('Test Case 04', function () {
         MainPage().do().clickOn(MainPageSelectors().selector.WebTables)
-        WebTablesPage().do().clickOn(WebTablesPageSelectors().selector.DeleteButton)
-        CommonAssertions().must('.rt-tbody > :nth-child(1) > .rt-tr > :nth-child(1)').haveText()
+        // WebTablesPage().do().clickOn(WebTablesPageSelectors().selector.DeleteButton)
+        // CommonAssertions().must('.rt-tbody > :nth-child(1) > .rt-tr > :nth-child(1)').haveText()
+
+        WebTablesPage().specy().deleteTable(WebTablesPageSelectors().selector.DeleteButton)
+        WebTablesPage().assert().must('.rt-tbody > :nth-child(1) > .rt-tr > :nth-child(1)').haveText()
     });
 });

@@ -1,11 +1,22 @@
+import {CommonActions} from "../commonUsefulCommands/commands";
+import {CommonAssertions} from "../commonUsefulCommands/assertions";
+
 export const RadioButtonPage = () => {
     return {
         do: () => {
+            return CommonActions()
+        },
+
+        specy: () => {
             return {
-                clickOn: (selector) =>{
-                    cy.get(selector).click()
+                check: (selector) => {
+                    CommonActions().clickOn(selector)
                 }
             }
+        },
+
+        assert: () => {
+            return CommonAssertions()
         }
     }
 }

@@ -7,9 +7,9 @@ export  const CheckBoxPage = () => {
             return CommonActions()
         },
 
-        specy: (selector) => {
+        specy: () => {
           return {
-              checkBox: () => {
+              checkBox: (selector) => {
                   CommonActions().clickOn(selector)
               }
           }

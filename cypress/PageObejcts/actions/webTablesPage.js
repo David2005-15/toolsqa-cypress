@@ -1,11 +1,22 @@
+import {CommonActions} from "../commonUsefulCommands/commands";
+import {CommonAssertions} from "../commonUsefulCommands/assertions";
+
 export const WebTablesPage = () => {
     return{
         do: () => {
-            return {
-                clickOn: (selector) => {
-                    cy.get(selector).click()
-                }
-            }
+            return CommonActions()
+        },
+
+        specy: () => {
+          return{
+              deleteTable: (selector) => {
+                  CommonActions().clickOn(selector)
+              }
+          }
+        },
+
+        assert: () => {
+            return CommonAssertions()
         }
     }
 }
