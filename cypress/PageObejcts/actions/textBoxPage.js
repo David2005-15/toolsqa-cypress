@@ -16,22 +16,6 @@ export const TextBoxPage = () => {
                     CommonActions().fillInField(`${selector} ${TextBoxPageSelectors.selector.CurrentAddress}`, address)
                     CommonActions().fillInField(`${selector} ${TextBoxPageSelectors.selector.PermanentAddress}`, perAddress)
                 }
-                //
-                // fillFullName: (selector, info) => {
-                //     CommonActions().fillInField(selector, info)
-                // },
-                //
-                // fillEmail: (selector, info) => {
-                //     CommonActions().fillInField(selector, info)
-                // },
-                //
-                // fillAddress: (selector, info) => {
-                //     CommonActions().fillInField(selector, info)
-                // },
-                //
-                // fillPermanentAddress: (selector, info) => {
-                //     CommonActions().fillInField(selector, info)
-                // }
             }
         },
         assert: () => {
