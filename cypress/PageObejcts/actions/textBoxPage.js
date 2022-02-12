@@ -15,6 +15,14 @@ export const TextBoxPage = () => {
 
                 fillEmail: (selector, info) => {
                     CommonActions().fillInField(selector, info)
+                },
+
+                fillAddress: (selector, info) => {
+                    CommonActions().fillInField(selector, info)
+                },
+
+                fillPermanentAddress: (selector, info) => {
+                    CommonActions().fillInField(selector, info)
                 }
             }
         },

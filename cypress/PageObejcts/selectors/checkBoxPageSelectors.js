@@ -1,8 +1,6 @@
-export const CheckBoxPageSelectors = () => {
-    return {
-        selector : {
-            "CheckBox": ".rct-title",
-            "PlusButton": ".rct-option-expand-all"
-        }
+export const CheckBoxPageSelectors = {
+    selector : {
+        "CheckBox": ".rct-title",
+        "PlusButton": ".rct-option-expand-all"
     }
 }

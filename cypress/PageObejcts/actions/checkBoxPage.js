@@ -1,15 +1,22 @@
+import {CommonActions} from "../commonUsefulCommands/commands";
+import {CommonAssertions} from "../commonUsefulCommands/assertions";
+
 export  const CheckBoxPage = () => {
     return {
         do: () => {
-            return {
-                check: (selector) => {
-                    cy.get(selector).click()
-                },
+            return CommonActions()
+        },
 
-                clickOn: (selector) => {
-                    cy.get(selector).click()
-                }
-            }
+        specy: () => {
+          return {
+              checkBox: (selector) => {
+                  CommonActions().clickOnButton(selector)
+              }
+          }
+        },
+
+        assert: () => {
+          return CommonAssertions()
         }
     }
 }

@@ -19,29 +19,23 @@ describe('TestSuit01', function () {
         CommonActions().clickOnButton(".category-cards > :nth-child(1)")
     });
 
-    it.only('Test Case 01',function (){
+    it('Test Case 01',function (){
         MainPage().do().clickOn(MainPageSelectors().selector.TextBox)
-        // TextBoxPage().must('#submit').beVisible()
         TextBoxPage().assert().must('#submit').beVisible()
-        // TextBoxPage().fillInField(TextBoxPageSelectors.selector.FullName, "Full Name")
-        // TextBoxPage().do().fillInField(TextBoxPageSelectors.selector.Email, "test@email.com")
-        // TextBoxPage().do().fillInField(TextBoxPageSelectors.selector.CurrentAddress, "My Address")
-        // TextBoxPage().do().fillInField(TextBoxPageSelectors.selector.PermanentAddress, "Permanent Address")
-        // TextBoxPage().do().clickOnButton(TextBoxPageSelectors.selector.Submit)
-        // TextBoxPage().assert().must().beVisible("#name")
         TextBoxPage().specy().fillFullName(TextBoxPageSelectors.selector.FullName, "Full Name")
         TextBoxPage().specy().fillEmail(TextBoxPageSelectors.selector.Email, "mail@main.com")
-        // CommonActions().clickOnButton(TextBoxPageSelectors.selector.Submit)
-
-        // CommonAssertions().must('#name').beVisible()
+        TextBoxPage().specy().fillAddress(TextBoxPageSelectors.selector.CurrentAddress, "My Address")
+        TextBoxPage().specy().fillPermanentAddress(TextBoxPageSelectors.selector.PermanentAddress, "My Permanent Address")
+        TextBoxPage().do().clickOnButton(TextBoxPageSelectors.selector.Submit)
+        TextBoxPage().assert().must('#name').beVisible()
     });
 
     it('Test Case 02', function (){
         MainPage().do().clickOn(MainPageSelectors().selector.CheckBox)
-        CommonAssertions().must('.rct-title').beVisible()
-        CheckBoxPage().do().clickOn(CheckBoxPageSelectors().selector.CheckBox)
-        CheckBoxPage().do().clickOn(CheckBoxPageSelectors().selector.PlusButton)
-        CommonAssertions().must('#result').beVisible()
+        CheckBoxPage().assert().must('.rct-title').beVisible()
+        CheckBoxPage().specy().checkBox(CheckBoxPageSelectors.selector.CheckBox)
+        CheckBoxPage().do().clickOnButton(CheckBoxPageSelectors.selector.PlusButton)
+        CheckBoxPage().assert().must('#result').beVisible()
     });
 
     it('Test Case 03', function () {
